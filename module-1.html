@@ -3,14 +3,37 @@
 
 <body>
 
-  <p>Before the script...</p>
-
+  <h2>Greeting</h2>
+  <p id="greeting"></p>
+  <h2>Calculator</h2>
+  <p id="calculator"></p>
+  <h2>Class</h2>
+  <p id="class"></p>
   <script>
-    alert( 'Hello, world!' );
+    "use strict"
+    console.log("I'm printing to console!")
+
+    let name = prompt("Enter your name")
+    document.getElementById("greeting").innerHTML="Hello, " + name + "!"
+
+    let num= [], sum=0, product=1, average=0;
+    for (let i=0; i<3; i++){
+      num[i] = parseInt(prompt("Enter the number"))
+      sum += num[i]
+      product *= num[i]
+    } 
+    average = sum/3
+    document.getElementById("calculator").innerHTML="The sum is " + sum + "; The product is " + product + "; The average is " + average;
+
+    let class_list = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
+    name = prompt("Enter your name")
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+    num = getRandomInt(4)
+    document.getElementById("class").innerHTML=`${name}, you are ${class_list[num]}`;
+
   </script>
-
-  <p>...After the script.11</p>
-
 </body>
 
 </html>
